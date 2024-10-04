@@ -17,7 +17,10 @@ import salaryRouter from './routes/salary.js'
 dotenv.config();
 
 const app=express()
-app.use(cors())
+app.use(cors({
+    origin:"https://dashboard-seven-topaz.vercel.app",
+    credentials:true
+}))
 app.use(express.json())
 app.use(express.static('public/uploads'));
 
